@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DataBidingLearn</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_activity">Hello Main Activity</string>
+    <string name="from_code">From code: </string>
+    <string name="from_xml">From xml: </string>
+    <string name="change_state">Change state</string>
+</resources>

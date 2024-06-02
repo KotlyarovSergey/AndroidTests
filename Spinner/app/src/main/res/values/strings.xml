@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Spinner</string>
+    <string-array name="cats">
+        <item>Васька</item>
+        <item>Мурзик</item>
+        <item>Рыжик</item>
+        <item>Боцман</item>
+        <item>Черныш</item>
+        <item>Пушок</item>
+    </string-array>
+</resources>

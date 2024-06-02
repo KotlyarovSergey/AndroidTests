@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4"
+    tools:context=".SharedPreferencesActivity">
+
+    <EditText
+        android:id="@+id/etTetxtToSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="56dp"
+        android:padding="8dp"
+        android:text="Text to save"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:minHeight="48dp"
+        android:onClick="onClickSave"
+        android:text="Save"
+        android:textColor="#FFD54F"
+        android:textSize="24sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/etTetxtToSave"
+        app:layout_constraintStart_toStartOf="@+id/etTetxtToSave"
+        app:layout_constraintTop_toBottomOf="@+id/etTetxtToSave" />
+
+    <Button
+        android:id="@+id/btLoad"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:minHeight="48dp"
+        android:onClick="onClickLoad"
+        android:text="Load"
+        android:textColor="#FFD54F"
+        android:textSize="24sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/btSave"
+        app:layout_constraintStart_toStartOf="@+id/btSave"
+        app:layout_constraintTop_toBottomOf="@+id/btSave" />
+
+    <EditText
+        android:id="@+id/etLoadedText"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:ems="10"
+        android:inputType="text"
+        android:minHeight="56dp"
+        android:padding="8dp"
+        android:singleLine="false"
+        android:text="Loaded text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/btLoad"
+        app:layout_constraintStart_toStartOf="@+id/btLoad"
+        app:layout_constraintTop_toBottomOf="@+id/btLoad" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#BA68C8"
+        android:gravity="center"
+        android:minHeight="56dp"
+        android:text="Shared Preferences"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
