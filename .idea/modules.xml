@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Tests.iml" filepath="$PROJECT_DIR$/.idea/Tests.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/AndroidTests.iml" filepath="$PROJECT_DIR$/.idea/AndroidTests.iml" />
+>>>>>>> origin/master
     </modules>
   </component>
 </project>
