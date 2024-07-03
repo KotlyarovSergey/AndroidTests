@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/alpha_menu_button"
+        android:icon="@drawable/alpha"
+        android:title="Альфа"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/sber_menu_button"
+        android:icon="@drawable/sber2"
+        android:title="Сбер"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/vtb_menu_button"
+        android:icon="@drawable/vtb"
+        android:title="ВТБ"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/tbank_menu_button"
+        android:icon="@drawable/tbank2"
+        android:title="Т-Банк"
+        app:showAsAction="never"/>
+</menu>
