@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/banks_navigation"
+    app:startDestination="@id/baseFragment">
+
+    <fragment
+        android:id="@+id/baseFragment"
+        android:name="com.ksv.navgraph.BaseFragment"
+        android:label="fragment_base"
+        tools:layout="@layout/fragment_base" >
+        <action
+            android:id="@+id/action_baseFragment_to_sberFragment"
+            app:destination="@id/sberFragment" />
+        <action
+            android:id="@+id/action_baseFragment_to_alphaFragment"
+            app:destination="@id/alphaFragment"
+            app:popUpTo="@id/baseFragment" />
+        <action
+            android:id="@+id/action_baseFragment_to_TBankFragment"
+            app:destination="@id/TBankFragment" />
+        <action
+            android:id="@+id/action_baseFragment_to_vtbFragment"
+            app:destination="@id/vtbFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sberFragment"
+        android:name="com.ksv.navgraph.SberFragment"
+        android:label="fragment_sber"
+        tools:layout="@layout/fragment_sber" />
+    <fragment
+        android:id="@+id/alphaFragment"
+        android:name="com.ksv.navgraph.AlphaFragment"
+        android:label="AlphaFragment" >
+        <action
+            android:id="@+id/action_alphaFragment_to_TBankFragment"
+            app:destination="@id/TBankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/TBankFragment"
+        android:name="com.ksv.navgraph.TBankFragment"
+        android:label="fragment_t_bank"
+        tools:layout="@layout/fragment_t_bank" />
+    <fragment
+        android:id="@+id/vtbFragment"
+        android:name="com.ksv.navgraph.VtbFragment"
+        android:label="fragment_vtb"
+        tools:layout="@layout/fragment_vtb" />
+</navigation>
