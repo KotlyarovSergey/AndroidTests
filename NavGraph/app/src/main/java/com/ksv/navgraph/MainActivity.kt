@@ -48,21 +48,21 @@ class MainActivity : AppCompatActivity() {
             R.id.vtb_menu_button -> {
                 supportFragmentManager.commit{
                     replace<VtbFragment>(binding.fragmentContainer.id, VTB_FRAGMENT_TAG)
-                    addToBackStack(VtbFragment.javaClass.name)
+                    addToBackStack(VtbFragment::class.java.name)
                 }
                 true
             }
             R.id.sber_menu_button -> {
                 supportFragmentManager.commit{
                     replace<SberFragment>(binding.fragmentContainer.id, SBER_FRAGMENT_TAG)
-                    addToBackStack(SberFragment.javaClass.name)
+                    addToBackStack(SberFragment::class.java.name)
                 }
                 true
             }
             R.id.tbank_menu_button -> {
                 supportFragmentManager.commit{
                     replace<TBankFragment>(binding.fragmentContainer.id, TBANK_FRAGMENT_TAG)
-                    addToBackStack(TBankFragment.javaClass.name)
+                    addToBackStack(TBankFragment::class.java.name)
                 }
                 true
             }
