@@ -47,4 +47,5 @@ class MainActivity : AppCompatActivity(), ActivityDialogFragment.NoticeDialogLis
     override fun onDialogCanceled() {
         binding.messageText.text = "Cancel"
     }
+
 }
