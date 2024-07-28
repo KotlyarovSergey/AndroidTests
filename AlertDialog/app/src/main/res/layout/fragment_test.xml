@@ -16,6 +16,18 @@
         android:gravity="center"/>
 
     <Button
+        android:id="@+id/instance_dialog_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:paddingVertical="8dp"
+        android:text="instance of alert dialog"
+        android:textSize="24sp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/custom_dialog_button"/>
+
+
+    <Button
         android:id="@+id/custom_dialog_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -25,6 +25,10 @@ class SecondActivity :
         Log.d("ksvlog", "user cancel dialog")
     }
 
+
+    // Работает!
+    // но это плохо! потому что появляется жесткая связть м/у
+    // фрагментом и активити
     override fun onCustomDialogPositiveClick() {
         Log.d("ksvlog", "user click \"Yes\"")
         sendToFragment("Yes")
