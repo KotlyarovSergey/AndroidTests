@@ -15,8 +15,7 @@
             app:destination="@id/sberFragment" />
         <action
             android:id="@+id/action_baseFragment_to_alphaFragment"
-            app:destination="@id/alphaFragment"
-            app:popUpTo="@id/baseFragment" />
+            app:destination="@id/alphaFragment" />
         <action
             android:id="@+id/action_baseFragment_to_TBankFragment"
             app:destination="@id/TBankFragment" />
@@ -36,15 +35,28 @@
         <action
             android:id="@+id/action_alphaFragment_to_TBankFragment"
             app:destination="@id/TBankFragment" />
+        <action
+            android:id="@+id/action_alphaFragment_to_vtbFragment"
+            app:destination="@id/vtbFragment"
+            app:popUpTo="@id/alphaFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/TBankFragment"
         android:name="com.ksv.navgraph.TBankFragment"
         android:label="fragment_t_bank"
-        tools:layout="@layout/fragment_t_bank" />
+        tools:layout="@layout/fragment_t_bank" >
+        <action
+            android:id="@+id/action_TBankFragment_to_alphaFragment"
+            app:destination="@id/alphaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/vtbFragment"
         android:name="com.ksv.navgraph.VtbFragment"
         android:label="fragment_vtb"
-        tools:layout="@layout/fragment_vtb" />
+        tools:layout="@layout/fragment_vtb" >
+        <action
+            android:id="@+id/action_vtbFragment_to_TBankFragment"
+            app:destination="@id/TBankFragment" />
+    </fragment>
 </navigation>

@@ -30,6 +30,9 @@ class AlphaFragment : Fragment() {
         binding.tbankButton.setOnClickListener {
             findNavController().navigate(R.id.action_alphaFragment_to_TBankFragment)
         }
+        binding.vtbButton.setOnClickListener{
+            findNavController().navigate(R.id.action_alphaFragment_to_vtbFragment)
+        }
     }
 
 }
