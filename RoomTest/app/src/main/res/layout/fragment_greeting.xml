@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".GreetingFragment"
+    tools:context=".presentation.GreetingFragment"
     android:background="#B7BEE7"
     android:gravity="center"
     android:padding="16dp">
@@ -22,11 +22,11 @@
         android:text="Gteeting Fragment" />
 
     <Button
-        android:id="@+id/button_one"
+        android:id="@+id/button_fill_db"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#3949AB"
-        android:text="FRAG TWO"/>
+        android:text="FILL DB"/>
 
 </LinearLayout>
 </layout>
