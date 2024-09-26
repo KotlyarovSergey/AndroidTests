@@ -29,7 +29,7 @@ import androidx.room.PrimaryKey
 
 )
 data class Purchase(
-    @PrimaryKey(autoGenerate = true) val id: Long,
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
     val date: String,
     @ColumnInfo(name = "group_id") val groupId: Int,
     @ColumnInfo(name = "product_id") val productId: Int,

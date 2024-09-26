@@ -27,20 +27,22 @@
                 android:id="@+id/radio_shops"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
                 android:text="shops"/>
             <RadioButton
                 android:id="@+id/radio_products"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
                 android:text="products"/>
             <RadioButton
                 android:id="@+id/radio_groups"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
                 android:text="groups"/>
+            <RadioButton
+                android:id="@+id/radio_purchases"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="purchases"/>
         </RadioGroup>
 
         <LinearLayout

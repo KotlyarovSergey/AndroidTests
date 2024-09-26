@@ -44,51 +44,44 @@ class FillDbFragment : Fragment() {
 
 
     private fun radioGroupOnCheckedChangeListener(id: Int) {
-        when (id) {
-            binding.radioShops.id -> {
-                showShops()
-            }
-
-            binding.radioGroups.id -> {
-                showGroups()
-            }
-
-            binding.radioProducts.id -> {
-                showProducts()
+        with(binding) {
+            when (id) {
+                radioShops.id -> { showShops() }
+                radioGroups.id -> { showGroups() }
+                radioProducts.id -> { showProducts() }
+                radioPurchases.id -> { showPurchases() }
             }
         }
+//        when (id) {
+//            binding.radioShops.id -> {
+//                showShops()
+//            }
+//
+//            binding.radioGroups.id -> {
+//                showGroups()
+//            }
+//
+//            binding.radioProducts.id -> {
+//                showProducts()
+//            }
+//        }
     }
 
     private fun fillButtonOnClickListener() {
         when (binding.radioGroup.checkedRadioButtonId) {
-            binding.radioShops.id -> {
-                fillShops()
-            }
-
-            binding.radioGroups.id -> {
-                fillGroups()
-            }
-
-            binding.radioProducts.id -> {
-                fillProducts()
-            }
+            binding.radioShops.id -> { fillShops() }
+            binding.radioGroups.id -> { fillGroups() }
+            binding.radioProducts.id -> { fillProducts() }
         }
     }
 
     private fun showButtonOnClickListener() {
         with(binding) {
             when (radioGroup.checkedRadioButtonId) {
-                radioShops.id -> {
-                    showShops()
-                }
-
-                radioGroups.id -> {
-                    showGroups()
-                }
-
-                radioProducts.id -> {
-                    showProducts()
-                }
+                radioShops.id -> { showShops() }
+                radioGroups.id -> { showGroups() }
+                radioProducts.id -> { showProducts() }
+                radioPurchases.id -> { showPurchases() }
             }
         }
     }
@@ -179,6 +172,15 @@ class FillDbFragment : Fragment() {
         lifecycleScope.launch {
             val groups = groupsDao.getAllGroups()
             val text = groups.toString()
+            binding.textView.text = text
+        }
+    }
+
+    private fun showPurchases() {
+        val purchaseDao = Dependencies.getPurchasesDao()
+        lifecycleScope.launch {
+            val purchases = purchaseDao.getAll()
+            val text = purchases.toString()
             binding.textView.text = text
         }
     }

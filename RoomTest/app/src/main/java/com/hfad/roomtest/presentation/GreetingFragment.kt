@@ -30,12 +30,20 @@ class GreetingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.buttonFillDb.setOnClickListener { buttonFillDbListener() }
+        binding.buttonAddPurchase.setOnClickListener { buttonAddPurchaseOnClickListener() }
     }
 
     private fun buttonFillDbListener(){
         parentFragmentManager.commit {
             replace<FillDbFragment>(R.id.fragment_container_view)
             addToBackStack(FillDbFragment::class.java.name)
+        }
+    }
+
+    private fun buttonAddPurchaseOnClickListener(){
+        parentFragmentManager.commit {
+            replace<AddPurchaseFragment>(R.id.fragment_container_view)
+            addToBackStack(AddPurchaseFragment::class.java.name)
         }
     }
 }
