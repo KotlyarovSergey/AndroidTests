@@ -15,4 +15,9 @@ object Dependencies {
         Room.databaseBuilder(applicationContext, AppDatabase::class.java, "database.db")
             .build()
     }
+
+    fun getShopsDao() = appDatabase.getShopsDao()
+    fun getGroupsDao() = appDatabase.getGroupsDao()
+    fun getProductsDao() = appDatabase.getProductsDao()
+    fun getPurchasesDao() = appDatabase.getPurchasesDao()
 }

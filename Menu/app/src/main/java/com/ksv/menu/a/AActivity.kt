@@ -21,6 +21,7 @@ import com.ksv.menu.databinding.ActivityABinding
 class AActivity : AppCompatActivity() {
     private lateinit var binding: ActivityABinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("ksvlog", "onCreate")
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityABinding.inflate(layoutInflater)
@@ -36,35 +37,41 @@ class AActivity : AppCompatActivity() {
 
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        Log.d("ksvlog", "onCreateOptionsMenu")
         menuInflater.inflate(R.menu.main_menu, menu)
         supportActionBar?.title = "Activity A"
+        hideMenuItem(menu)
 
         supportFragmentManager.addOnBackStackChangedListener {
             Log.d("ksvlog", "OnBackStackChangedListener")
-
-            // visible all items
-            val iterator = menu?.iterator()
-            if (iterator != null) {
-                for(item in iterator){
-                    item.isVisible = true
-                }
-            }
-
-            // get current fragment and hide respective item
-            val frag = supportFragmentManager.findFragmentById(R.id.fragment_container_a)
-            when(frag){
-                is A1Fragment -> {
-                    Log.d("ksvlog", "A1Fragment")
-                    menu?.findItem(R.id.menu_a1)?.isVisible = false
-                }
-                is A2Fragment -> {
-                    Log.d("ksvlog", "A2Fragment")
-                    menu?.findItem(R.id.menu_a2)?.isVisible = false
-                }
-            }
+            hideMenuItem(menu)
         }
 
         return super.onCreateOptionsMenu(menu)
+    }
+
+    private fun hideMenuItem(menu: Menu?) {
+        // visible all items
+        val iterator = menu?.iterator()
+        if (iterator != null) {
+            for (item in iterator) {
+                item.isVisible = true
+            }
+        }
+
+        // get current fragment and hide respective item
+        val frag = supportFragmentManager.findFragmentById(R.id.fragment_container_a)
+        when (frag) {
+            is A1Fragment -> {
+                Log.d("ksvlog", "A1Fragment")
+                menu?.findItem(R.id.menu_a1)?.isVisible = false
+            }
+
+            is A2Fragment -> {
+                Log.d("ksvlog", "A2Fragment")
+                menu?.findItem(R.id.menu_a2)?.isVisible = false
+            }
+        }
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
