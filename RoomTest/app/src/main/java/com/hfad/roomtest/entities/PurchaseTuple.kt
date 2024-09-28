@@ -10,9 +10,3 @@ data class PurchaseTuple(
     @ColumnInfo(name = "shop_name") val shop: String,
     val comment: String
 )
-
-data class PurchaseTupleTest(
-    val id: Long,
-    val date: String,
-    @ColumnInfo(name = "group_name") val group: String
-)
