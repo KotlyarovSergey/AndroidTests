@@ -6,8 +6,8 @@ import androidx.room.Index
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "groups",
-    indices = [Index(value = ["name"], unique = true)])
+    indices = [Index(value = ["group_name"], unique = true)])
 data class Group(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val name: String
+    @ColumnInfo(name = "group_name") val name: String
 )

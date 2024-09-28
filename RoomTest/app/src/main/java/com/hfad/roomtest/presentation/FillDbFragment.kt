@@ -52,19 +52,6 @@ class FillDbFragment : Fragment() {
                 radioPurchases.id -> { showPurchases() }
             }
         }
-//        when (id) {
-//            binding.radioShops.id -> {
-//                showShops()
-//            }
-//
-//            binding.radioGroups.id -> {
-//                showGroups()
-//            }
-//
-//            binding.radioProducts.id -> {
-//                showProducts()
-//            }
-//        }
     }
 
     private fun fillButtonOnClickListener() {
@@ -180,8 +167,11 @@ class FillDbFragment : Fragment() {
         val purchaseDao = Dependencies.getPurchasesDao()
         lifecycleScope.launch {
             val purchases = purchaseDao.getAll()
-            val text = purchases.toString()
+            val puchTuples = purchaseDao.getAllAsTuple()
+
+            val text = purchases.toString() + "\n" + puchTuples.toString()
             binding.textView.text = text
+
         }
     }
 }
