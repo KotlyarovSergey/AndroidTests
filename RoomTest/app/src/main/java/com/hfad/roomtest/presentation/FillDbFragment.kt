@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import com.hfad.roomtest.Dependencies
-import com.hfad.roomtest.R
 import com.hfad.roomtest.databinding.FragmentFillDbBinding
 import com.hfad.roomtest.entities.Group
 import com.hfad.roomtest.entities.Product
@@ -149,7 +148,7 @@ class FillDbFragment : Fragment() {
         val productsDao = Dependencies.getProductsDao()
         lifecycleScope.launch {
             val products = productsDao.getAllProducts()
-            val text = products.map { "${it.id}: ${it.name}" }.joinToString("\n")
+            val text = products.joinToString("\n") { "${it.id}: ${it.name}" }
             binding.textView.text = text
         }
     }
@@ -167,9 +166,11 @@ class FillDbFragment : Fragment() {
         val purchaseDao = Dependencies.getPurchasesDao()
         lifecycleScope.launch {
             val purchases = purchaseDao.getAll()
-            val puchTuples = purchaseDao.getAllAsTuple()
+            var text = purchases.toString()
+            val purchasTuples = purchaseDao.getAllAsTuple()
 
-            val text = purchases.toString() + "\n" + puchTuples.toString()
+            text += "\n\n" + purchasTuples
+                .joinToString("\n"){"\n${it.id}: ${it.date}: ${it.group} ${it.product} ${it.shop} (${it.comment})"}
             binding.textView.text = text
 
         }

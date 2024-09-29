@@ -79,7 +79,7 @@ class AddPurchaseFragment : Fragment() {
             position = binding.sinnerShop.selectedItemPosition
             val shopId = shops[position].id
             val comment = binding.editComment.text.toString()
-            val productId = 1
+            val productId = 2   // !!!!!!!!!!!!
             val purchase = Purchase(
                 date = date,
                 shopId = shopId,
