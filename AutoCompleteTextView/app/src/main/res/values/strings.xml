@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">AutoCompleteTextView</string>
+
+    <string-array name="input_array">
+        <item>мясо</item>
+        <item>рыба</item>
+        <item>грибы</item>
+        <item>масло</item>
+        <item>макароны</item>
+        <item>пиво</item>
+        <item>хлеб</item>
+        <item>мука</item>
+        <item>кефир</item>
+        <item>молоко</item>
+        <item>конфеты</item>
+        <item>печенье</item>
+        <item>паштет</item>
+        <item>сыр</item>
+        <item>гречка</item>
+        <item>рис</item>
+        <item>пасека</item>
+        <item>пасынок</item>
+        <item>паркет</item>
+        <item>пачка</item>
+        <item>палка</item>
+        <item>пакля</item>
+        <item>палас</item>
+        <item>парафин</item>
+    </string-array>
+
+</resources>
