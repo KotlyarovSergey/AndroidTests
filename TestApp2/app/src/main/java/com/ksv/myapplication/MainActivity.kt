@@ -11,6 +11,7 @@ import com.ksv.myapplication.activityresult.InputClass
 import com.ksv.myapplication.activityresult.MyIntRange
 import com.ksv.myapplication.activityresult.ThirdActivityContractCustom
 import com.ksv.myapplication.activityresult.ThirdActivityContractSimple
+import com.ksv.myapplication.torecycle.DateTimePickerActivity
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -48,6 +49,10 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        binding.datePickerButton.setOnClickListener {
+            val intent = Intent(this, DateTimePickerActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     fun onClickThirdActivity(view: View){
