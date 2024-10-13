@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import com.ksv.navgraph.databinding.FragmentBaseBinding
@@ -12,6 +13,7 @@ import com.ksv.navgraph.databinding.FragmentBaseBinding
 class BaseFragment : Fragment() {
     private var _binding: FragmentBaseBinding? = null
     private val binding get() = _binding!!
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,5 +42,7 @@ class BaseFragment : Fragment() {
         binding.vtbButton.setOnClickListener {
             findNavController().navigate(R.id.action_baseFragment_to_vtbFragment)
         }
+
+
     }
 }

@@ -27,7 +27,17 @@
         android:id="@+id/sberFragment"
         android:name="com.ksv.navgraph.SberFragment"
         android:label="fragment_sber"
-        tools:layout="@layout/fragment_sber" />
+        tools:layout="@layout/fragment_sber" >
+        <action
+            android:id="@+id/action_sberFragment_to_alphaFragment"
+            app:destination="@id/alphaFragment" />
+        <action
+            android:id="@+id/action_sberFragment_to_TBankFragment"
+            app:destination="@id/TBankFragment" />
+        <action
+            android:id="@+id/action_sberFragment_to_vtbFragment"
+            app:destination="@id/vtbFragment" />
+    </fragment>
     <fragment
         android:id="@+id/alphaFragment"
         android:name="com.ksv.navgraph.AlphaFragment"
@@ -40,6 +50,9 @@
             app:destination="@id/vtbFragment"
             app:popUpTo="@id/alphaFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_alphaFragment_to_sberFragment"
+            app:destination="@id/sberFragment" />
     </fragment>
     <fragment
         android:id="@+id/TBankFragment"
@@ -49,6 +62,9 @@
         <action
             android:id="@+id/action_TBankFragment_to_alphaFragment"
             app:destination="@id/alphaFragment" />
+        <action
+            android:id="@+id/action_TBankFragment_to_sberFragment"
+            app:destination="@id/sberFragment" />
     </fragment>
     <fragment
         android:id="@+id/vtbFragment"
@@ -58,5 +74,8 @@
         <action
             android:id="@+id/action_vtbFragment_to_TBankFragment"
             app:destination="@id/TBankFragment" />
+        <action
+            android:id="@+id/action_vtbFragment_to_sberFragment"
+            app:destination="@id/sberFragment" />
     </fragment>
 </navigation>

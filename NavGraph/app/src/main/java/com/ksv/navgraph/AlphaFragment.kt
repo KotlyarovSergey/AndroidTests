@@ -33,6 +33,9 @@ class AlphaFragment : Fragment() {
         binding.vtbButton.setOnClickListener{
             findNavController().navigate(R.id.action_alphaFragment_to_vtbFragment)
         }
+        binding.sberButton.setOnClickListener {
+            findNavController().navigate(R.id.action_alphaFragment_to_sberFragment)
+        }
     }
 
 }

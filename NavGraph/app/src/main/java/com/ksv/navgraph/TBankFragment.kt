@@ -30,5 +30,8 @@ class TBankFragment : Fragment() {
         binding.alphaButton.setOnClickListener{
             findNavController().navigate(R.id.action_TBankFragment_to_alphaFragment)
         }
+        binding.sberButton.setOnClickListener {
+            findNavController().navigate(R.id.action_TBankFragment_to_sberFragment)
+        }
     }
 }

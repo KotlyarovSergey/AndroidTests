@@ -31,5 +31,8 @@ class VtbFragment : Fragment() {
         binding.tbankButton.setOnClickListener {
             findNavController().navigate(R.id.action_vtbFragment_to_TBankFragment)
         }
+        binding.sberButton.setOnClickListener {
+            findNavController().navigate(R.id.action_vtbFragment_to_sberFragment)
+        }
     }
 }

@@ -5,55 +5,73 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.viewModelScope
+import androidx.navigation.fragment.findNavController
+import com.ksv.navgraph.databinding.FragmentBaseBinding
+import com.ksv.navgraph.databinding.FragmentSberBinding
+import kotlinx.coroutines.flow.launchIn
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SberFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SberFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentSberBinding? = null
+    private val binding get() = _binding!!
+    private val mainViewModel: MainViewModel by viewModels(
+        { findNavController().getBackStackEntry(R.id.banks_navigation) }
+    )
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sber, container, false)
+    ): View {
+        _binding = FragmentSberBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SberFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            SberFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.sberImage.setOnClickListener {
+            mainViewModel.canClose()
+//            findNavController().popBackStack()
+        }
+        mainViewModel.canClose.onEach {
+            if(it) findNavController().popBackStack()
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+
+        binding.vtbButton.setOnClickListener {
+            //findNavController().navigate(R.id.action_sberFragment_to_vtbFragment)
+            mainViewModel.toVtb()
+        }
+        mainViewModel.toVtb.onEach {
+            if (it) {
+                findNavController().navigate(R.id.action_sberFragment_to_vtbFragment)
+//                parentFragmentManager.commit {
+//                    replace<VtbFragment>(R.id.fragment_container)
+//                    addToBackStack(VtbFragment::class.java.name)
+//                }
             }
+        }.launchIn(viewLifecycleOwner.lifecycleScope)
+
+
+        binding.alphaButton.setOnClickListener {
+            findNavController().navigate(R.id.action_sberFragment_to_alphaFragment)
+        }
+        binding.tbankButton.setOnClickListener {
+            findNavController().navigate(R.id.action_sberFragment_to_TBankFragment)
+        }
     }
+
 }
